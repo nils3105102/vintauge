@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Image;
 
 class PagesController extends Controller
 {
@@ -27,7 +28,9 @@ class PagesController extends Controller
         return view('pages.contact')->with('title',$title);
     }
     public function gallery(){
-        return view('pages.gallery');
+
+        $images = Image::orderBy('created_at','desc')->get();
+        return view('pages.gallery')->with('images',$images);
     }
     public function single(){
         return view('pages.single');

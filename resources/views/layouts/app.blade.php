@@ -32,6 +32,11 @@
 	<!-- Owl Carousel Assets -->
     <link href="{{asset('owl-carousel/owl.carousel.css')}}" rel="stylesheet">
 
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<link  href="{{asset('js/fancybox/dist/jquery.fancybox.min.css')}}" rel="stylesheet">
+	<script src="{{asset('js/fancybox/dist/jquery.fancybox.min.js')}}"></script>
+
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
          <a href="http://windows.microsoft.com/en-US/internet-explorer/Items/ie/home?ocid=ie6_countdown_bannercode">
@@ -103,5 +108,19 @@ $(window).on('beforeunload',function(){
 	$(window).scrollTop(0);
 });
 </script>
+
+<script>
+$('[data-fancybox="images"]').fancybox({
+  afterLoad : function(instance, current) {
+    var pixelRatio = window.devicePixelRatio || 1;
+
+    if ( pixelRatio > 1.5 ) {
+      current.width  = current.width  / pixelRatio;
+      current.height = current.height / pixelRatio;
+    }
+  }
+});
+</script>
+
 </body>
 </html>

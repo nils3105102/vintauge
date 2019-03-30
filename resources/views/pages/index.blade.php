@@ -31,116 +31,26 @@
 					<div class="zerogrid">
 						<div class="wrap-box"><!--Start Box-->
 							<div class="row">
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<article>
-											<div class="post-thumbnail-wrap">
-												<a href="{{asset('single')}}" class="portfolio-box">
-													<img src="{{asset('images/11.jpg')}}" alt="">
-													<div class="portfolio-box-second">
-														<img src="{{asset('images/1.jpg')}}" alt="">
-													</div>
-												</a>
-											</div>
-											<div class="entry-header ">
-												<h3 class="entry-title">Lovely Smiles</h3>
-												<div class="l-tags"><a href="#">Design</a>
-											</div>
-										</article>
+								@foreach(App\Image::orderBy('created_at','desc')->get() as $image)
+									<div class="col-1-3">
+										<div class="wrap-col">
+											<article>
+												<div class="post-thumbnail-wrap">
+													<a href="{{asset('images/1')}}{{$image->id}}.jpg" class="portfolio-box" data-fancybox="images">
+														<img src="{{asset('images/1')}}{{$image->id}}.jpg" alt="">
+														<div class="portfolio-box-second">
+															<img src="images/{{$image->id}}.jpg" alt="">
+														</div>
+													</a>
+												</div>
+												<div class="entry-header ">
+													<h3 class="entry-title">{{$image->title}}</h3>
+
+												</div>
+											</article>
+										</div>
 									</div>
-								</div>
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<article>
-											<div class="post-thumbnail-wrap">
-												<a href="single.html" class="portfolio-box">
-													<img src="images/6.jpg" alt="">
-													<div class="portfolio-box-second">
-														<img src="images/8.jpg" alt="">
-													</div>
-												</a>
-											</div>
-											<div class="entry-header ">
-												<h3 class="entry-title">Lovely Smiles</h3>
-												<div class="l-tags"><a href="#">Design</a>
-											</div>
-										</article>
-									</div>
-								</div>
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<article>
-											<div class="post-thumbnail-wrap">
-												<a href="single.html" class="portfolio-box">
-													<img src="images/14.jpg" alt="">
-													<div class="portfolio-box-second">
-														<img src="images/3.jpg" alt="">
-													</div>
-												</a>
-											</div>
-											<div class="entry-header ">
-												<h3 class="entry-title">Lovely Smiles</h3>
-												<div class="l-tags"><a href="#">Design</a>
-											</div>
-										</article>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<article>
-											<div class="post-thumbnail-wrap">
-												<a href="single.html" class="portfolio-box">
-													<img src="images/5.jpg" alt="">
-													<div class="portfolio-box-second">
-														<img src="images/4.jpg" alt="">
-													</div>
-												</a>
-											</div>
-											<div class="entry-header ">
-												<h3 class="entry-title">Lovely Smiles</h3>
-												<div class="l-tags"><a href="#">Design</a>
-											</div>
-										</article>
-									</div>
-								</div>
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<article>
-											<div class="post-thumbnail-wrap">
-												<a href="single.html" class="portfolio-box">
-													<img src="images/2.jpg" alt="">
-													<div class="portfolio-box-second">
-														<img src="images/12.jpg" alt="">
-													</div>
-												</a>
-											</div>
-											<div class="entry-header ">
-												<h3 class="entry-title">Lovely Smiles</h3>
-												<div class="l-tags"><a href="#">Design</a>
-											</div>
-										</article>
-									</div>
-								</div>
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<article>
-											<div class="post-thumbnail-wrap">
-												<a href="single.html" class="portfolio-box">
-													<img src="images/9.jpg" alt="">
-													<div class="portfolio-box-second">
-														<img src="images/7.jpg" alt="">
-													</div>
-												</a>
-											</div>
-											<div class="entry-header ">
-												<h3 class="entry-title">Lovely Smiles</h3>
-												<div class="l-tags"><a href="#">Design</a>
-											</div>
-										</article>
-									</div>
-								</div>
+								@endforeach
 							</div>
 						</div>
 					</div>

@@ -53,27 +53,13 @@
                 <div class="wrap-col">
                     <h3 class="widget-title">Gallery</h3>
                     <div class="row">
-                        <div class="col-1-3">
-                            <div class="wrap-col">
-                                <a href="#"><img src="images/11.jpg"></a>
-                                <a href="#"><img src="images/1.jpg"></a>
-                                <a href="#"><img src="images/13.jpg"></a>
+                        @foreach(App\Image::orderBy('created_at','desc')->get() as $image)
+                            <div class="col-1-3">
+                                <div class="wrap-col">
+                                    <a href="{{url('gallery')}}"><img src="{{asset('images/1')}}{{$image->id}}.jpg"></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-1-3">
-                            <div class="wrap-col">
-                                <a href="#"><img src="images/10.jpg"></a>
-                                <a href="#"><img src="images/9.jpg"></a>
-                                <a href="#"><img src="images/4.jpg"></a>
-                            </div>
-                        </div>
-                        <div class="col-1-3">
-                            <div class="wrap-col">
-                                <a href="#"><img src="images/2.jpg"></a>
-                                <a href="#"><img src="images/6.jpg"></a>
-                                <a href="#"><img src="images/5.jpg"></a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
