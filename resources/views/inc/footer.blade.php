@@ -13,7 +13,8 @@
                     <h3 class="widget-title">Recent Post</h3>
                     <ul>
                         @foreach(App\Post::orderBy('created_at','desc')->get() as $post)
-                            <li><a href="{{url('posts')}}/{{$post->id}}">{{$post->title}}</a></li>
+                            <li><a href="">{{$post->title}}</a></li>
+                            <!--<li><a href="{{url('posts')}}/{{$post->id}}">{{$post->title}}</a></li>-->
                             <!--<li><a href="#">5 PLACES THAT MAKE A GREAT HOLIDAY</a></li>
                             <li><a href="#">PEBBLE TIME STEEL IS ON TRACK TO SHIP IN JULY</a></li>
                             <li><a href="#">STARTUP COMPANY???S CO-FOUNDER TALKS ON HIS NEW PRODUCT</a></li>-->
@@ -56,7 +57,8 @@
                         @foreach(App\Image::orderBy('created_at','desc')->get() as $image)
                             <div class="col-1-3">
                                 <div class="wrap-col">
-                                    <a href="{{url('gallery')}}"><img src="{{asset('images/1')}}{{$image->id}}.jpg"></a>
+                                    <a href="{{url('gallery')}}"><img src="{{asset('images')}}/{{$image->impath}}"></a>
+                                    <!--<a href="{{url('gallery')}}"><img src="{{asset('images/1')}}{{$image->id}}.jpg"></a>-->
                                 </div>
                             </div>
                         @endforeach

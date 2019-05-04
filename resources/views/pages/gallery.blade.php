@@ -15,10 +15,10 @@
 										<div class="wrap-col">
 											<article>
 												<div class="post-thumbnail-wrap">
-													<a href="{{asset('images/1')}}{{$image->id}}.jpg" class="portfolio-box" data-fancybox="images" >
-														<img src="{{asset('images/1')}}{{$image->id}}.jpg" alt="">
+													<a href="{{asset('images')}}/{{$image->impath}}" class="portfolio-box" data-fancybox="images" >
+														<img src="{{asset('images')}}/{{$image->impath}}" alt="">
 														<div class="portfolio-box-second">
-															<img src="images/{{$image->id}}.jpg" alt="">
+															<img src="images/{{$image->imgsecpath}}" alt="">
 														</div>
 													</a>
 												</div>
@@ -30,6 +30,7 @@
 										</div>
 									</div>
 								@endforeach
+
 						<!--	<div class="col-1-3">
 								<div class="wrap-col">
 									<article>

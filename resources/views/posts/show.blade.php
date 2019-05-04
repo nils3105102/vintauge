@@ -12,12 +12,26 @@
 												<!--<span class="cat-links"><a href="#">BUSINESS</a>, <a href="#">LIFESTYLE</a></span>-->
 											</div>
 											<div class="post-thumbnail-wrap">
-												<img src="{{asset('images/slide')}}{{$post->id}}.jpg">
+												<!--<img src="{{asset('images/slide')}}{{$post->id}}.jpg">-->
+												<img src="{{url('images')}}/{{$post->impath}}">
 											</div>
 											<div class="entry-content">
 												<p>{{$post->body}}</p>
 											</div>
+											<div class="entry-content">
+												<!--<p>{{$post->body}}</p>-->
+												<center><a class="button " href="{{url('posts')}}/{{$post->id}}/edit">Edit</a></center>
+
+												<form name="comment_form" id="comment_form" method="post" action="{{action('PostsController@destroy', $post->id)}}  " enctype="multipart/form-data">
+														{{ csrf_field() }}
+
+														<input type="hidden" name="_method" value="DELETE">
+														<input class="sendButton" type="submit" name="submitcomment" value="Delete">
+												</form>
+											</div>
 										</div>
+
+
 									</article>
 						</div>
 					</div>

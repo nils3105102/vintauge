@@ -16,10 +16,11 @@
 												<!--<span class="cat-links"><a href="#">BUSINESS</a>, <a href="#">LIFESTYLE</a></span>-->
 											</div>
 											<div class="post-thumbnail-wrap">
-												<img src="{{asset('images/slide')}}{{$post->id}}.jpg">
+												<!--<img src="{{asset('images/slide')}}{{$post->id}}.jpg">-->
+												<img src="{{asset('images')}}/{{$post->impath}}">
 											</div>
 											<div class="entry-content">
-												<p>{{$post->body}}</p>
+												<!--<p>{{$post->body}}</p>-->
 												<center><a class="button " href="{{url('posts')}}/{{$post->id}}">Read More</a></center>
 											</div>
 										</div>

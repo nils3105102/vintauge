@@ -5,9 +5,12 @@
 <div id="owl-slide" class="owl-carousel">
 	@if(count($posts) > 0)
 		@foreach($posts as $post)
-			<div class="item">
+		<div class="item">
+			<img src="{{url('images')}}/{{$post->impath}}" />
+		</div>
+			<!--<div class="item">
 				<img src="{{asset('images/slide')}}{{$post->id}}.jpg" />
-			</div>
+			</div>-->
 		@endforeach
 	@endif
 
@@ -36,12 +39,19 @@
 										<div class="wrap-col">
 											<article>
 												<div class="post-thumbnail-wrap">
-													<a href="{{asset('images/1')}}{{$image->id}}.jpg" class="portfolio-box" data-fancybox="images">
+
+													<a href="{{asset('images')}}/{{$image->impath}}" class="portfolio-box" data-fancybox="images">
+														<img src="{{asset('images')}}/{{$image->impath}}" alt="">
+														<div class="portfolio-box-second">
+															<img src="{{asset('images')}}/{{$image->imgsecpath}}" alt="">
+														</div>
+													</a>
+													<!--<a href="{{asset('images/1')}}{{$image->id}}.jpg" class="portfolio-box" data-fancybox="images">
 														<img src="{{asset('images/1')}}{{$image->id}}.jpg" alt="">
 														<div class="portfolio-box-second">
 															<img src="images/{{$image->id}}.jpg" alt="">
 														</div>
-													</a>
+													</a>-->
 												</div>
 												<div class="entry-header ">
 													<h3 class="entry-title">{{$image->title}}</h3>
@@ -93,11 +103,11 @@
 											<article>
 												@if($post->id % 2 != 0)
 													<div class="col-1-2">
-														<img src="{{asset('images/slide')}}{{$post->id}}.jpg" alt="">
+														<img src="{{url('images')}}/{{$post->impath}}" alt="{{url('images')}}/{{$post->impath}}">
 													</div>
 												@else
 												<div class="col-1-2 f-right">
-													<img src="{{asset('images/slide')}}{{$post->id}}.jpg" alt="">
+													<img src="{{url('images')}}/{{$post->impath}}" alt="{{url('images')}}/{{$post->impath}}">
 												</div>
 												@endif
 												<div class="col-1-2">

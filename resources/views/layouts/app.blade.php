@@ -33,9 +33,9 @@
     <link href="{{asset('owl-carousel/owl.carousel.css')}}" rel="stylesheet">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 	<link  href="{{asset('js/fancybox/dist/jquery.fancybox.min.css')}}" rel="stylesheet">
 	<script src="{{asset('js/fancybox/dist/jquery.fancybox.min.js')}}"></script>
+
 
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
@@ -62,7 +62,7 @@
 				<ul>
 					<li class=""><a href="{{url('')}}"><span>Home</span></a></li>
 					<li><a href="{{url('gallery')}}"><span>Gallery</span></a></li>
-					<li class=""><a href="{{url('posts')}}"><span>Blog</span></a>
+					<li class=""><a href="{{url('posts')}}"><span>Blog</span></a></li>
 						<!--<ul>
 							<li class="has-sub"><a href="#"><span>Item 1</span></a>
 								<ul>
@@ -77,9 +77,11 @@
 								</ul>
 							</li>
 						</ul>-->
-					</li>
+
 					<li><a href="{{url('single')}}"><span>About</span></a></li>
 					<li class="last"><a href="{{url('contact')}}"><span>Contact</span></a></li>
+					<li class="last"><a href="{{url('login')}}"><span>Login</span></a></li>
+					<li class="last"><a href="{{url('register')}}"><span>Register</span></a></li>
 				</ul>
 			</div>
 			<!--<div id="owl-slide" class="owl-carousel">

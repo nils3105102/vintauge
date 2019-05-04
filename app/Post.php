@@ -9,4 +9,5 @@ class Post extends Model
     protected $table ='posts';
     public $primaryKey = 'id';
     public $timestamps = true;
+    public $fillable =['impath'];
 }
