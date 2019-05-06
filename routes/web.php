@@ -21,3 +21,7 @@ Route::get('/gallery', 'PagesController@gallery');
 Route::get('/single', 'PagesController@single');
 
 Route::resource('posts', 'PostsController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
